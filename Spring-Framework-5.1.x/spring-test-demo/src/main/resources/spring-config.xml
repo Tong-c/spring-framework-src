@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 配置bean 指定自定义初始化、销毁方法、初始化属性-->
+	<bean id="student"
+		  class="com.wsh.Student"
+		  init-method="initMethod"
+		  destroy-method="destroyMethod">
+		<property name="name" value="zhangsan"/>
+	</bean>
+
+<!--	<alias name="student" alias="stu,stud"/>-->
+
+<!--	<bean name="myBeanPostProcessor" class="com.wsh.MyBeanPostProcessor"/>-->
+
+<!--	<bean name="myBeanFactoryPostProcessor" class="com.wsh.MyBeanFactoryPostProcessor"/>-->
+
+
+	<!--setter注入 多例方式-->
+	<!--<bean id="a" class="com.wsh.circularreference.A" scope="prototype">
+		<property name="b" ref="b"/>
+	</bean>
+
+	<bean id="b" class="com.wsh.circularreference.B"  scope="prototype">
+		<property name="a" ref="a"/>
+	</bean>-->
+
+	<!--setter注入 单例方式-->
+	<!--<bean id="a" class="com.wsh.circularreference.A" scope="singleton">
+		<property name="b" ref="b"/>
+	</bean>
+
+	<bean id="b" class="com.wsh.circularreference.B"  scope="singleton">
+		<property name="a" ref="a"/>
+	</bean>-->
+
+	<!--构造器注入-->
+	<!--<bean id="a" class="com.wsh.circularreference.A" >
+		<constructor-arg index="0" ref="b"/>
+	</bean>
+
+	<bean id="b" class="com.wsh.circularreference.B" >
+		<constructor-arg index="0" ref="a"/>
+	</bean>-->
+
+	<!--自定义BeanFactoryPostProcessor-->
+<!--
+	<bean id="student" class="com.wsh.beanfactorypostprocessor.Student">
+		<property name="id" value="1"/>
+		<property name="name" value="张三"/>
+		<property name="age" value="10"/>
+	</bean>
+	<bean id="myBeanFactoryPostProcessor01" class="com.wsh.beanfactorypostprocessor.MyBeanFactoryPostProcessor01"/>
+	<bean id="myBeanFactoryPostProcessor02" class="com.wsh.beanfactorypostprocessor.MyBeanFactoryPostProcessor02"/>
+-->
+
+	<!--自定义BeanPostProcessor-->
+	<!--<bean id="student" class="com.wsh.beanpostprocessor.Student" init-method="init" destroy-method="destroy">-->
+		<!--<property name="id" value="1"/>-->
+		<!--<property name="name" value="张三"/>-->
+		<!--<property name="age" value="10"/>-->
+	<!--</bean>-->
+	<!--<bean id="myBeanPostProcessor" class="com.wsh.beanpostprocessor.MyBeanPostProcessor"/>-->
+
+	<!--事件监听机制-->
+	<!--<bean id="customListener" class="com.wsh.listener.CustomListener"></bean>-->
+
+<!--	<bean id="student"
+		  class="com.wsh.Student"
+		  init-method="initMethod"
+		  destroy-method="destroyMethod">
+		<property name="name" value="zhangsan"/>
+	</bean>-->
+
+<!--	<bean id="student" class="com.wsh.injectbean.method_01.Student"/>-->
+
+</beans>

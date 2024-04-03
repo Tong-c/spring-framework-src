@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 配置bean 指定自定义初始化、销毁方法、初始化属性-->
+	<bean id="student"
+		  class="com.wsh.Student"
+		  init-method="initMethod"
+		  destroy-method="destroyMethod">
+		<property name="name" value="zhangsan"/>
+	</bean>
+
+</beans>

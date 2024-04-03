@@ -1,0 +1,21 @@
+description = "spring test demo"
+
+dependencies {
+    compile(project(":spring-beans"))
+    compile(project(":spring-core"))
+    compile(project(":spring-context"))
+    compile(project(":spring-tx"))
+    compile(project(":spring-jdbc"))
+    implementation 'com.alibaba:druid:1.1.10'
+    compile ("mysql:mysql-connector-java:5.1.24")
+    optional(project(":spring-aop"))
+    compile("org.aspectj:aspectjweaver:1.8.6")
+}
+
+repositories {
+    mavenLocal()
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+    maven { url "http://repo.springsource.org/plugins-release" }
+    maven { url "https://maven.aliyun.com/repository/spring" }
+    mavenCentral()
+}
